@@ -1,0 +1,134 @@
+<script type="text/javascript" src="/js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="css/login.css">
+
+
+  <div ng-controller="userController">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project 365</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-2">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">About</a></li>            
+            <li><a href="#section3">Impact</a></li>
+            <li><a href="#section3">Today</a></li>
+            <li><a href="#section3">Story</a></li>
+            <li><a href="#section5">Contact</a></li>
+            <li id="login"><a data-target="#login" href="#/login">Login</a></li>
+            <li id="logedin" class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logged In As: {{user.first_name}}  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a data-target="#new_project" id="proposednav" href="#/new_project">Propose Project</a></li>
+                  <li><a data-target="#donate" id="donatenav" href="#/donate">Donate</a></li>
+                  <li><a href="">Settings</a></li>
+                  <li><a href="">Log Out</a></li>
+                </ul>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<div id="project" ng-controller="userController">
+    <div class="wrap">
+        <div id="signin">
+
+       
+
+            <div ng-repeat="i in errors" id="alert_message" class="alert alert-danger" style="width:200px">
+                <span class="close" data-dismiss="alert">×</span>
+                <span><strong>Atention!</strong> {{ i.error }} </span>
+            </div>
+
+            <p class="form-title">
+                Sign In</p>
+            <form class="login">
+                <input type="text" ng-model="login_user.email" placeholder="E-Mail" />
+                <input type="password" ng-model="login_user.password" placeholder="Password" />
+                <input type="submit" ng-click="loginuser()" value="Sign In" class="btn btn-success btn-sm" />
+
+                <div class="remember-forgot">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" /> Remember Me
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <a class="btn btn-block btn-social btn-facebook">
+                    <i class="fa fa-facebook"></i> Sign in with Facebook
+                </a>
+                <a class="btn btn-block btn-social btn-google-plus">
+                    <i class="fa fa-google-plus"></i> Sign in with Google
+                </a>
+                <a class="btn btn-block btn-social btn-twitter">
+                    <i class="fa fa-twitter"></i> Sign in with Twitter
+                </a>
+
+                <div class="remember-forgot">
+                    <div class="row">
+                        <div class="col-md-6 forgot-pass-content">
+                            <a id="registernow" class="forgot-pass">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="register">
+            <p class="form-title">
+                Register</p>
+            <form class="login">
+                <input type="text" ng-model="new_user.first_name" placeholder="First Name" />
+                <input type="text" ng-model="new_user.last_name" placeholder="Last Name" />
+                <input type="text" ng-model="new_user.occupation" placeholder="Occupation" />
+                <input type="text" ng-model="new_user.email" placeholder="Email" />
+                <input type="password" ng-model="new_user.password" placeholder="Password" />
+                <input type="password" placeholder="Confirm Password" />
+                <input type="submit" ng-click="adduser()" value="Register" class="btn btn-success btn-sm" />
+                <br>
+                <br>
+
+                <a class="btn btn-block btn-social btn-facebook">
+                    <i class="fa fa-facebook"></i> Register with Facebook
+                </a>
+                <a class="btn btn-block btn-social btn-google-plus">
+                    <i class="fa fa-google-plus"></i> Register with Google
+                </a>
+                <a class="btn btn-block btn-social btn-twitter">
+                    <i class="fa fa-twitter"></i> Register with Twitter
+                </a>
+
+
+
+
+                <div class="remember-forgot">
+                    <div class="row">
+                        <div class="col-md-6 forgot-pass-content">
+                            <a id="back" class="forgot-pass">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

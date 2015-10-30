@@ -1,0 +1,224 @@
+        <script type="text/javascript" src="/js/jquery.js"></script>
+
+
+  <div ng-controller="userController">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project 365</a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-2">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#section1">Home</a></li>
+            <li><a href="#section2">About</a></li>            
+            <li><a href="#section3">Impact</a></li>
+            <li><a href="#section3">Today</a></li>
+            <li><a href="#section3">Story</a></li>
+            <li><a href="#section5">Contact</a></li>
+            <li id="login"><a data-target="#login" href="#/login">Login</a></li>
+            <li id="logedin" class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logged In As: {{user.first_name}}  <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a data-target="#new_project" id="proposednav" href="#/new_project">Propose Project</a></li>
+                  <li><a data-target="#donate" id="donatenav" href="#/donate">Donate</a></li>
+                  <li><a href="">Settings</a></li>
+                  <li><a href="">Log Out</a></li>
+                </ul>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section class="container-fluid" id="section1">
+    <h1 class="text-center tlt v-center" data-in-effect="rollIn" >Project 365</h1>
+    <h3 class="text-center">Make a Difference Every Day.</h3>
+</section>
+
+
+<section class="container-fluid" id="section2">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+        <h1>What is Project 365?</h1>
+        <br>
+            <p class="lead">Our team hand picks each nonprofit we feature. We select innovative, high impact organizations that are well-rated by trusted, publicly available resources like Guidestar and Charity Navigator.
+            These nonprofits are doing great work all over the world. We think you’ll love learning about them...</p>
+        <br>       
+    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-4">
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-2 text-center"><h3>$30 monthly, US tax-deductible.</h3><p>Donors are charged $30 every 30 days. We make it easy to cancel, and all donations are 100% US tax-deductible...</p><i class="fa fa-cog fa-5x"></i></div>
+            </div>
+          </div>
+          <div class="col-sm-4 text-center">
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1 text-center"><h3>Anonymously processed.</h3><p>To spare your inbox, your email isn’t shared with nonprofits. You can always sign up for more info on any nonprofit’s website...</p><i class="fa fa-user fa-5x"></i></div>
+            </div>
+          </div>
+          <div class="col-sm-4 text-center">
+            <div class="row">
+              <div class="col-sm-10 text-center"><h3>We’re a nonprofit too!</h3><p>Project 365 makes no money, in any way, from donations on this site. Project 365 was built by a team of (almost entirely) volunteers...</p><i class="fa fa-mobile fa-5x"></i></div>
+            </div>
+          </div>
+      </div><!--/row-->
+    <div class="row"><br></div>
+  </div><!--/container-->
+  </div>
+</section>
+
+<section class="container-fluid" id="section3">
+  <h2 class="text-center">Micro Donations, Macro Impact</h2>
+    <p class="text-center lead">Togeather We Can Make A Differance</p>
+    <img src="http://futurisconsulting.com/wp-content/uploads/2013/11/World-map-Pins.png" width="1000" class="img-responsive center-block ">
+    
+</section>
+
+<section class="container-fluid" id="section7">
+  <h2 class="text-center">Todays Project</h2>
+  <div class="row">               
+      <div class="col-md-4">
+          <img src="https://ununsplash.imgix.net/photo-1417024321782-1375735f8987?q=75&fm=jpg&s=7af3f809a9c1b90b7fcbd71655b661bc"
+          class="img-quadrata center-block" >
+          <h3 class="text-center" >John Doe
+          <br/>
+          <small> Developer</small></h3>
+      </div>
+      <div class="col-md-4">
+          <img src="https://unsplash.imgix.net/reserve/fqUehZ3ZRru2Kh11qDBT_IMG_0042.jpg?q=75&fm=jpg&s=e96c5bfe57acbd6cdfdbe7d84f37656d"
+          class="center-block img-quadrata" >
+          <h3 class="text-center" >John Smith
+          <br/>
+          <small> Web Designer</small></h3>
+      </div>
+      <div class="col-md-4">
+          <img src="https://unsplash.imgix.net/photo-1422222948315-28aadb7a2cb8?q=75&fm=jpg&s=cfeadbd7a991e58b553bee29a7eeca55"
+          class="center-block img-quadrata">
+          <h3 class="text-center">Samantha Reds
+          <br/>
+          <small> Content manager</small></h3>
+      </div>
+  </div>   
+</section>
+
+<section class="container-fluid" id="section4">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+        <h4 class="text-center bar v-center">$1 a day can really help. Every 3,000 donors is more than a million dollars a year to nonprofits!</h4>
+    </div>
+  </div>
+</section>
+
+
+<section class="container-fluid" id="section88">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+        <h1>Asharfis Story</h1>
+        <br>
+          <p class="lead">Asharfi Lal is almost 40 years old. He lives in one of India's poorest states, Uttar Pradesh. His area is a dry one, and if you go back just a few decades, you'll see that most of the people here had no access to clean water.
+          But in 1981 the Indian government decided to change that, and quickly. In just ten years, thousands of wells were installed across Uttar Pradesh. That was good news for people in the '80s; but as it turns out, not so great for their kids. The UN's "Water Decade" (1981-1990) may have included a ton of new wells, but what it didn't include was a full-fledged maintenance program to keep them running over time... <a>Read More</a></p>
+        <br>       
+    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-4">
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-2 text-center"><h3>$30 monthly, US tax-deductible.</h3><p>Donors are charged $30 every 30 days. We make it easy to cancel, and all donations are 100% US tax-deductible...</p><i class="fa fa-cog fa-5x"></i></div>
+            </div>
+          </div>
+          <div class="col-sm-4 text-center">
+            <div class="row">
+              <div class="col-sm-10 col-sm-offset-1 text-center"><h3>Anonymously processed.</h3><p>To spare your inbox, your email isn’t shared with nonprofits. You can always sign up for more info on any nonprofit’s website...</p><i class="fa fa-user fa-5x"></i></div>
+            </div>
+          </div>
+          <div class="col-sm-4 text-center">
+            <div class="row">
+              <div class="col-sm-10 text-center"><h3>We’re a nonprofit too!</h3><p>Project 365 makes no money, in any way, from donations on this site. Project 365 was built by a team of (almost entirely) volunteers...</p><i class="fa fa-mobile fa-5x"></i></div>
+            </div>
+          </div>
+      </div><!--/row-->
+    <div class="row"><br></div>
+  </div><!--/container-->
+  </div>
+</section>
+
+
+
+
+
+<section class="container" id="section5">
+  <h1 class="text-center">Join The Fight:</h1>
+  <h3 class="text-center">Follow Us On Our Social Media Platforms</h3><br><br>
+    <div class="row">
+      <!--fontawesome icons-->
+      <div class="col-sm-1 col-sm-offset-2 col-xs-4 text-center">
+       <i class="fa fa-github fa-4x"></i>
+      </div>
+      <div class="col-sm-1 col-xs-4 text-center">
+       <i class="fa fa-foursquare fa-4x"></i>
+      </div>
+      <div class="col-sm-1 col-xs-4 text-center">
+        <i class="fa fa-facebook fa-4x"></i>
+      </div>
+      <div class="col-sm-1 col-xs-4 text-center">
+       <i class="fa fa-pinterest fa-4x"></i>
+      </div>
+      <div class="col-sm-1 col-xs-4 text-center">
+       <i class="fa fa-google-plus fa-4x"></i>
+      </div>
+      <div class="col-sm-1 col-xs-4 text-center">
+       <i class="fa fa-twitter fa-4x"></i>
+      </div>
+      <div class="col-sm-1 col-xs-4 text-center">
+       <i class="fa fa-dribbble fa-4x"></i>
+      </div>
+      <div class="col-sm-1 col-xs-4 text-center">
+       <i class="fa fa-instagram fa-4x"></i>
+      </div>
+  </div><!--/row-->
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <br><br>
+      </div>
+  </div>
+
+  <div class="col-md-12">
+    <div class="form-area">  
+        <form role="form">
+        <br style="clear:both">
+                    <h3 style="margin-bottom: 25px; text-align: center;">We Would Love To Hear From You</h3>
+              <div class="form-group">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+          </div>
+                    <div class="form-group">
+                    <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+                        <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>                    
+                    </div>
+            
+        <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Contact Us</button>
+        </form>
+    </div>
+</div>
+</section>

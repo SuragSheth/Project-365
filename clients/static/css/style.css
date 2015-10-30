@@ -1,0 +1,125 @@
+.navbar {margin-bottom:  -5px;}
+
+
+.bar {
+	font-size: 25px;
+}
+.icon-bar {
+	background-color:#fff;
+}
+
+.navbar-trans {
+	background-color:#279ddd;
+    color:#fff;
+}
+
+.navbar-trans li>a:hover,.navbar-trans li>a:focus,.navbar-trans li.active {
+	background-color:#38afef;
+}
+
+
+fusioncharts {
+	padding-bottom: 50px;
+}
+
+#ex1 {
+	margin-bottom: 10px;
+}
+
+.navbar-trans a{
+    color:#fefefe;
+}
+
+.navbar-trans .form-control:focus {
+	border-color: #eee;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(100,100,100,0.6);
+}
+
+section {
+	padding-top:30px;  
+    padding-bottom:30px; 
+    min-height:calc(100% - 1px);
+}
+
+.v-center {
+    padding-top:10%;
+    font-size:70px;
+}
+  
+.well {
+	border-color:transparent;
+}
+
+a.list-group-item.active,[class*='-info'] {
+	background-color: #168ccc;
+    color:#fff;
+}
+
+.img-quadrata {
+       border-radius:50%;
+       width:150px;
+       height:150px;
+}
+
+small{
+		text-align:center;
+        font-size:1.5em; 
+        text-decoration:underline;
+        color:gray;
+}
+
+  
+#section1 {
+	background-image:url('http://media.giphy.com/media/TKL07SyUBRIpq/giphy.gif');
+	background-size:100%;
+	background-attachment: fixed;
+	height:100%;
+	width:100%;
+	background-color: black;
+	color:#dedeff;
+}
+
+#section55 {
+	background-image:url('http://blog.hhcolorlab.com/wp-content/uploads/2014/02/cinemagraph-13.gif');
+	background-size:100%;
+	background-attachment: fixed;
+	height:100%;
+	width:100%;
+	background-color: black;
+	color:#dedeff;
+}
+  
+#section2 {
+	background-color: #e5e5ef;
+    color:#686868;
+}
+  
+#section3 {
+	background-color: #168ccc;
+    color:#ddd;
+}
+
+#section4 {
+	background-image:url('http://i.imgur.com/78LXaoT.gif');
+	background-size:100%;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	height:100%;
+	width:100%;
+	background-color: black;
+	color:#dedeff;
+}
+
+#section5,#section7,#section7 a {
+    color:black;
+}
+
+#section6 {
+	background-color: #168ccc;
+    color:#ddd;
+}
+
+.btn-glyphicon { padding:8px; background:#ffffff; margin-right:4px; }
+.icon-btn { padding: 1px 15px 3px 2px; border-radius:50px;}
