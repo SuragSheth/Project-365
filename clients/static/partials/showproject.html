@@ -1,0 +1,143 @@
+<link rel="stylesheet" type="text/css" href="/css/sb-admin-2.css">
+<link rel="stylesheet" type="text/css" href="/css/timeline.css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+
+
+
+<div ng-controller="userController">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project 365</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#section1">Home</a></li>
+                    <li><a href="#section2">About</a></li>
+                    <li><a href="#section3">Impact</a></li>
+                    <li><a href="#section3">Today</a></li>
+                    <li><a href="#section3">Story</a></li>
+                    <li><a href="#section5">Contact</a></li>
+                    <li id="login"><a data-target="#login" href="#/login">Login</a></li>
+                    <li id="logedin" class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Logged In As: {{user.first_name}}  <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a data-target="#new_project" id="proposednav" href="#/new_project">Propose Project</a></li>
+                            <li><a data-target="#donate" id="donatenav" href="#/donate">Donate</a></li>
+                            <li><a href="">Settings</a></li>
+                            <li><a href="">Log Out</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <nav>
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href=""><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-calendar fa-fw"></i> Calander</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa  fa-list fa-fw"></i> For Later</a>
+                    </li>
+                    <li>
+                        <a href=""><i class="fa fa-user fa-fw"></i> Users</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
+	<div ng-controller="userController">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+            <div ng-repeat="i in project track by $index">
+                <h1 class="page-header">{{i.title}} <button class="btn btn-default btn-xs">{{i.category}}</h2></h1>
+                <h4>Proposed By: {{ i.user_id }}</h4>
+            </div>
+            </div>
+ 
+        </div>
+
+        
+            <div ng-repeat="i in project track by $index">
+               	<h3>Location: </h3>
+                <h4>{{i.location}}</h4>
+  
+                <h3>Mission</h3>
+                <h4>{{i.mission}}</h4>                
+
+                <h3>Short Description</h3>
+                <h4>{{i.short_description}}</h4>
+
+                 <h3>Full Description</h3>
+                <h4>{{i.full_description}}</h4>
+            
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Project Video:
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="flot-chart">
+                           	<embed width="50%" height="50%" src="{{ i.video_url }}">
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Project Funding Breakdown
+                    </div>
+
+                    <input type="hidden" ng-model="new_project.category1" value="{{ i.data_breakdown }}">
+
+                    <div ng-repeat="j in data_breakdown">
+	                    <h1>{{ j.label }}</h1>
+	                    <h1>{{ j.value }}</h1>
+                    </div>
+
+
+
+                    <div class="panel-body">
+                        <div class="flot-chart">
+                            <div class="flot-chart-content" id="flot-pie-chart"></div>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+
+
+      
+
+			</div>
+        </div>
+    </div>
+</div>

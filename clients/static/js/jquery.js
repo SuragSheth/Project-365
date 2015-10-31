@@ -17,14 +17,14 @@ $(document).ready(function() { /* activate scrollspy menu */
     //     $("#count").value = count
     // }); 
 
-	// $("#logedin").hide();
-	// $("#proposednav").hide();
+	$("#logedin").hide();
+	$("#proposednav").hide();
 
 	$("#ex1, #ex2").change(function(){
         $('#theshit').click();
     });
 
-
+    $('.carousel').carousel()
 
     /* smooth scrolling sections */
     $('a[href*=#]:not([href=#])').click(function() {

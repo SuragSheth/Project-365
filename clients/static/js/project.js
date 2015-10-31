@@ -26,9 +26,17 @@
             .when('/admindashboard', {
                 templateUrl: 'partials/admindashboard.html'
             })
+            .when('/show_project', {
+                templateUrl: 'partials/showproject.html'
+            })
+            .when('/donate', {
+                templateUrl: 'partials/donate.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
+
+          
 
 
     });
@@ -40,8 +48,8 @@
 
         $scope.myDataSource = {
             chart: {
-                caption: "Project Funding",
-                subcaption: "Last Year",
+                caption: "Project Funding Breakdown",
+                subcaption: "",
                 startingangle: "120",
                 showlabels: "0",
                 showlegend: "1",
@@ -72,6 +80,7 @@
 
         $scope.updateMyChartData = function() {
             // for (var i=0; i < count; i++)
+            $scope.myDataSource.chart.subcaption = $scope.new_project.title;
             $scope.myDataSource.data[1].label = $scope.new_project.category1;
             $scope.myDataSource.data[1].value = $scope.new_project.category1_1;
             $scope.myDataSource.data[2].label = $scope.new_project.category2;
@@ -87,14 +96,15 @@
 
 
         $scope.addproject = function() {
-            alert("click worked");
             var addproject_repack = {
                 user_id: "Surag Sheth",
                 title: $scope.new_project.title,
                 short_description: $scope.new_project.short_description,
                 mission: $scope.new_project.mission,
                 category: $scope.new_project.category,
+                location: $scope.new_project.location,
                 video_url: $scope.new_project.video_url,
+                data_breakdown: [{label:$scope.new_project.category1, value:$scope.new_project.category1_1},{label:$scope.new_project.category2, value:$scope.new_project.category2_2},{label:$scope.new_project.category3, value:$scope.new_project.category3_3},{label:$scope.new_project.category4, value:$scope.new_project.category4_4}],
                 full_description: $scope.new_project.full_description,
                 status: "Pending",
                 // data_breakdown: $scope.new_project.data_breakdown,
@@ -137,6 +147,17 @@
 project365_app.controller("userController", function($scope, $location, $routeParams, $rootScope, userFactory) {
         $scope.user = $routeParams.user;
         $scope.dashboard = $routeParams.dashboard;
+        $scope.project = $routeParams.project;
+
+        console.log($routeParams);
+
+
+        $scope.getone = function(project){
+            userFactory.getOne(project, function(data){
+            $scope.project = data[0];
+            $location.path('/show_project').search({project: data});
+          });      
+        };
 
 
 
@@ -192,7 +213,6 @@ project365_app.controller("userController", function($scope, $location, $routePa
 
 
         $scope.loginadmin = function() {
-            alert("clickkkkkk");
             var login_user_repack = {
                 email: $scope.login_user.email,
                 password: $scope.login_user.password,
@@ -217,9 +237,8 @@ project365_app.controller("userController", function($scope, $location, $routePa
                 $("#login").hide();
                 $("#logedin").show();
                 $("#proposednav").show();
-            } else {
-                
-            }
+
+            } 
         });
 
 
@@ -241,6 +260,14 @@ project365_app.controller("userController", function($scope, $location, $routePa
                 callback(output);
             });
         };
+
+        factory.getOne = function(info, callback){
+              $http.post("/get_one", info).success(function(output){
+                console.log("GETTTTING", output);
+                callback(output);
+          });
+        };
+        
 
         factory.logedInUser = function(callback) {
             if (current_user !== undefined) {

@@ -10,6 +10,7 @@ var projectSchema = new mongoose.Schema({
 		video_url: String,
 		full_description: String,
 		status: String,
+		location: String,
 		data_breakdown: [],
 		created_at: Date
 	});

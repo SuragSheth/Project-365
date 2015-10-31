@@ -57,10 +57,10 @@
                         <a href=""><i class="fa fa-calendar fa-fw"></i> Calander</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-calendar fa-fw"></i> For Later</a>
+                        <a href=""><i class="fa  fa-list fa-fw"></i> For Later</a>
                     </li>
                     <li>
-                        <a href=""><i class="fa fa-calendar fa-fw"></i> Users</a>
+                        <a href=""><i class="fa fa-user fa-fw"></i> Users</a>
                     </li>
                 </ul>
             </div>
@@ -182,7 +182,7 @@
                                 <thead>
                                     <tr>
                                         <th>Project Title</th>
-                                        <th>Full Name</th>
+                                        <th>Status</th>
                                         <th>E-Mail</th>
                                         <th>Category</th>
                                         <th>Date</th>
@@ -195,9 +195,9 @@
                                         <td>{{ i.status }}</td>
                                         <td>surag@codingdojo.com</td>
                                         <td class="center">{{ i.category }}</td>
-                                        <td>10/25/2015</td>
+                                        <td>10/30/2015</td>
                                         <td class="center">
-                                        	<button ng-click="viewproj()" class="btn btn-default">View</button>
+                                        	<button ng-click="getone(i)" class="btn btn-default">View</button>
                                         	<button class="btn btn-success">Approve</button>
                                         	<button class="btn btn-warning">Later</button>
                                             <button class="btn btn-danger">Deny</button>

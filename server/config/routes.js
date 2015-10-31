@@ -30,9 +30,13 @@ module.exports = function(app) {
 		    admin.login(req, res);
     });
 
-    app.get('/proposed_projects', function(req, res) {
-		    project.shownew(req, res);
+    app.post('/get_one', function(req, res) {
+        project.show_project(req, res);
     });
+
+    // app.get('/proposed_projects', function(req, res) {
+		  //   project.shownew(req, res);
+    // });
 
      app.get('/all_projects', function(req, res) {
 		    project.allprojects(req, res);

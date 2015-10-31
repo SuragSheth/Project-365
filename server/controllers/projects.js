@@ -27,6 +27,19 @@ module.exports = (function() {
         });
     },
 
+    show_project: function(req, res){
+      console.log("___________", req.body);
+      Project.find({_id: req.body._id}, function(err, project){
+        if(err){
+          console.log(err);
+          console.log("ERROR: Could Not Get Project")
+        } else {
+          console.log("This Project", project)
+          res.json(project);
+        }       
+      })
+    },
+
 
   }
 
